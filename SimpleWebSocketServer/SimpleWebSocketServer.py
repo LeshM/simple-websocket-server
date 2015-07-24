@@ -586,7 +586,7 @@ class SimpleWebSocketServer(object):
             except Exception as n:
                pass
          
-         rList, wList, xList = select(self.listeners, writers, self.listeners)
+         rList, wList, xList = select(self.listeners, writers, self.listeners, timeout=0.1)
          
          for ready in wList:
             client = None
